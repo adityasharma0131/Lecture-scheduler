@@ -88,7 +88,8 @@ The Online Lecture Scheduler is a web application designed to manage courses, in
         cd backend
         npm install
 
-    Install frontend dependencies
+    # Install frontend dependencies
+
     cd ..
     cd frontend
     npm install
