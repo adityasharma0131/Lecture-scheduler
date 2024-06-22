@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const InstructorPage = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [instructors, setInstructors] = useState([]);
@@ -41,6 +42,7 @@ const InstructorPage = () => {
       const response = await axios.post(
         "http://localhost:3000/register-instructor",
         {
+          name: name,
           email: email,
           password: password,
         }
@@ -71,11 +73,12 @@ const InstructorPage = () => {
       <button type="button" className="back-button" onClick={handleGoBack}>
         Back
       </button>
-      <div className="header">InstructorPage Admin side</div>
+      <div className="header">Instructor Page Admin side</div>
       <div className="container">
         <table className="input-table">
           <thead>
             <tr>
+              <th>Name</th>
               <th>Email</th>
               <th>Password</th>
               <th>Action</th>
@@ -83,6 +86,15 @@ const InstructorPage = () => {
           </thead>
           <tbody>
             <tr>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  className="input-field"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </td>
               <td>
                 <input
                   type="email"
@@ -118,13 +130,15 @@ const InstructorPage = () => {
         <table className="instructors-table">
           <thead>
             <tr>
+              <th>Name</th>
               <th>Email</th>
               <th>Type</th>
             </tr>
           </thead>
           <tbody>
             {instructors.map((instructor, index) => (
-              <tr key={instructor.id || index}>
+              <tr key={instructor._id || index}>
+                <td>{instructor.name}</td>
                 <td>{instructor.email}</td>
                 <td>{instructor.type}</td>
               </tr>

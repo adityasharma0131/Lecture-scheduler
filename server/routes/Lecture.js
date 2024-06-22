@@ -14,27 +14,23 @@ connect
   });
 
 // Define the User schema
-const UserSchema = new mongoose.Schema({
-  name: {
+const lectureSchema = new mongoose.Schema({
+  course: {
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
+  instructor: {
     type: String,
     required: true,
   },
-  type: {
-    type: String,
-    required: true, // Assuming "admin" is the default type
+  date: {
+    type: Date,
+    required: true,
   },
 });
 
 // Create a User model based on the schema
-const User = mongoose.model("User", UserSchema);
 
-module.exports = User;
+const Lecture = mongoose.model("Lecture", lectureSchema);
+
+module.exports = Lecture;
