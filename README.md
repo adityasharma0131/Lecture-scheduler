@@ -4,6 +4,21 @@
 
 The Online Lecture Scheduler is a web application designed to manage courses, instructors, lectures, and user authentication. It allows administrators to register courses, manage instructors, schedule lectures, and handle user registrations and logins.
 
+
+## Images
+
+![image1](/client/public/images/1.png)
+![image2](/client/public/images/2.png)
+![image3](/client/public/images/3.png)
+![image4](/client/public/images/4.png)
+![image5](/client/public/images/5.png)
+![image6](/client/public/images/6.png)
+![image7](/client/public/images/7.png)
+![image8](/client/public/images/8.png)
+![image9](/client/public/images/9.png)
+
+
+
 ## Technologies Used
 
 - **Frontend**: React.js
