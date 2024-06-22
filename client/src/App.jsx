@@ -8,6 +8,7 @@ import CoursePage from "./pages/AdminSide/CoursePage";
 import InstructorSide from "./pages/InstructorSide/InstructorPage";
 import Error from "./pages/ErrorSide/ErrorPage";
 import { Toaster } from "react-hot-toast";
+import LecturePage from "./pages/AdminSide/LecturePage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route exact path="/admin" element={<AdminPage />} />
         <Route exact path="/admin/instructor" element={<InstructorPage />} />
         <Route exact path="/admin/course" element={<CoursePage />} />
+        <Route exact path="/admin/lecture" element={<LecturePage />} />
         <Route exact path="/instructor" element={<InstructorSide />} />
         <Route exact path="/*" element={<Error />} />
       </Routes>

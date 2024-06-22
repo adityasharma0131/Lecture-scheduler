@@ -49,19 +49,21 @@ const AdminPage = () => {
 
   return (
     <>
-      <div className="header">
-        AdminPage
-        <button type="button" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
+      <button type="button" onClick={handleLogout}>
+        Logout
+      </button>
+      <div className="header">AdminPage</div>
 
       <div className="pages">
         <Link to="/admin/instructor">
           <button>Instructors Page</button>
         </Link>
-        <button>Courses Page</button>
-        <button>Lectures Page</button>
+        <Link to="/admin/course">
+          <button>Courses Page</button>
+        </Link>
+        <Link to="/admin/lecture">
+          <button>Lectures Page</button>
+        </Link>
       </div>
 
       <div className="table-container">

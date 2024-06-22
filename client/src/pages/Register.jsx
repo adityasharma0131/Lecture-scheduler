@@ -22,7 +22,7 @@ const Register = () => {
         throw new Error("Invalid email format. Please enter a valid email.");
       }
 
-      const response = await axios.post("http://localhost:3000/register", {
+      const response = await axios.post("http://localhost:3000/register-admin", {
         email: values.email,
         password: values.password,
       });
