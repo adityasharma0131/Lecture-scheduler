@@ -23,7 +23,7 @@ const Register = () => {
         throw new Error("Invalid email format. Please enter a valid email.");
       }
 
-      const response = await axios.post("http://localhost:3000/register-admin", {
+      const response = await axios.post("lecture-scheduler-seven.vercel.app/register-admin", {
         name: values.email,
         email: values.email,
         password: values.password,

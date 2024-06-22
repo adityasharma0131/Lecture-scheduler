@@ -24,7 +24,7 @@ const Login = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post(`http://localhost:3000/login`, {
+      const response = await axios.post(`lecture-scheduler-seven.vercel.app/login`, {
         email: values.email,
         password: values.password,
       });

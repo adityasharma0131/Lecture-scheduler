@@ -13,7 +13,9 @@ const AdminPage = () => {
 
   const fetchLectures = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/lectures");
+      const response = await axios.get(
+        "lecture-scheduler-seven.vercel.app/lectures"
+      );
       setLectures(response.data);
     } catch (error) {
       toast.error("Failed to fetch lectures");

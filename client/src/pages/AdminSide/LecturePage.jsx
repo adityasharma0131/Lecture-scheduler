@@ -20,7 +20,7 @@ const InstructorPage = () => {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/courses");
+      const response = await axios.get("lecture-scheduler-seven.vercel.app/courses");
       setCourses(response.data);
     } catch (error) {
       toast.error("Failed to fetch courses");
@@ -29,7 +29,7 @@ const InstructorPage = () => {
 
   const fetchInstructors = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/instructors");
+      const response = await axios.get("lecture-scheduler-seven.vercel.app/instructors");
       setInstructors(response.data);
     } catch (error) {
       toast.error("Failed to fetch instructors");
@@ -38,7 +38,7 @@ const InstructorPage = () => {
 
   const fetchLectures = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/lectures");
+      const response = await axios.get("lecture-scheduler-seven.vercel.app/lectures");
       setLectures(response.data);
     } catch (error) {
       toast.error("Failed to fetch lectures");
@@ -68,7 +68,7 @@ const InstructorPage = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/register-lecture", {
+      const response = await axios.post("lecture-scheduler-seven.vercel.app/register-lecture", {
         courseId,
         instructorId,
         date,

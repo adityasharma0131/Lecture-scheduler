@@ -16,7 +16,7 @@ const InstructorPage = () => {
 
   const fetchInstructors = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/instructors");
+      const response = await axios.get("lecture-scheduler-seven.vercel.app/instructors");
       setInstructors(response.data);
     } catch (error) {
       toast.error("Failed to fetch instructors");
@@ -40,7 +40,7 @@ const InstructorPage = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:3000/register-instructor",
+        "lecture-scheduler-seven.vercel.app/register-instructor",
         {
           name: name,
           email: email,

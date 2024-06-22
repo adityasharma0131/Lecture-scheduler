@@ -17,7 +17,7 @@ const InstructorPage = () => {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/courses");
+      const response = await axios.get("lecture-scheduler-seven.vercel.app/courses");
       setCourses(response.data);
     } catch (error) {
       toast.error("Failed to fetch courses");
@@ -37,7 +37,7 @@ const InstructorPage = () => {
     try {
       // Assuming your backend correctly handles image uploads and responds with appropriate messages
       const response = await axios.post(
-        "http://localhost:3000/register-course",
+        "lecture-scheduler-seven.vercel.app/register-course",
         {
           name: name,
           level: level,
