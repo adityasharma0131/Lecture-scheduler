@@ -1,23 +1,58 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import { useCookies } from "react-cookie";
 import { toast, Toaster } from "react-hot-toast";
 
 const Register = () => {
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Validate email format
+      if (!/\S+@\S+\.\S+/.test(values.email)) {
+        throw new Error("Invalid email format. Please enter a valid email.");
+      }
+
+      const response = await axios.post("http://localhost:3000/register", {
+        email: values.email,
+        password: values.password,
+      });
+
+      // Assuming your backend responds with a success message
+      toast.success(response.data.message);
+
+      // Clear the form inputs after successful registration
+      setValues({ email: "", password: "" });
+    } catch (error) {
+      // Display error message from backend (if available) or generic error
+      const errorMessage =
+        error.response?.data?.message || error.message || "Registration failed. Please try again.";
+      toast.error(errorMessage);
+    }
+  };
+
   return (
     <div className="container">
       <h2>Register Account</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email</label>
           <input
             type="email"
             name="email"
             placeholder="email"
-            onChange={(e) =>
-              setValues({ ...values, [e.target.name]: e.target.value })
-            }
+            value={values.email}
+            onChange={handleInputChange}
+            required
           />
         </div>
         <div>
@@ -26,9 +61,9 @@ const Register = () => {
             type="password"
             name="password"
             placeholder="*****"
-            onChange={(e) =>
-              setValues({ ...values, [e.target.name]: e.target.value })
-            }
+            value={values.password}
+            onChange={handleInputChange}
+            required
           />
         </div>
         <button type="submit">Submit</button>

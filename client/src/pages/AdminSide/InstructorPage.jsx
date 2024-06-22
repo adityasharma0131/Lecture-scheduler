@@ -2,7 +2,10 @@ import React from 'react'
 
 const InstructorPage = () => {
   return (
-    <div>InstructorPage</div>
+    <>
+    <div>InstructorPage Admin side</div>
+    <button type='submit'>Logout</button>
+    </>
   )
 }
 

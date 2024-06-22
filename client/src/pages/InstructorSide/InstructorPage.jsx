@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const InstructorPage = () => {
   return (
-    <div>InstructorPage</div>
-  )
-}
+    <>
+      <div>InstructorPage instructor side</div>
+      <button type="submit">Logout</button>
+    </>
+  );
+};
 
-export default InstructorPage
+export default InstructorPage;
