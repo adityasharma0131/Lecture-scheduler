@@ -72,64 +72,66 @@ const InstructorPage = () => {
         Back
       </button>
       <div className="header">InstructorPage Admin side</div>
-      <table className="input-table">
-        <thead>
-          <tr>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <input
-                type="email"
-                placeholder="Enter Email"
-                className="input-field"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </td>
-            <td>
-              <input
-                type="password"
-                placeholder="Enter Password"
-                className="input-field"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </td>
-            <td>
-              <button
-                type="button"
-                className="action-button"
-                onClick={handleAdd}
-              >
-                Add
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>List of Instructors</h2>
-      <table className="instructors-table">
-        <thead>
-          <tr>
-            <th>Email</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          {instructors.map((instructor, index) => (
-            <tr key={instructor.id || index}>
-              <td>{instructor.email}</td>
-              <td>{instructor.type}</td>
+      <div className="container">
+        <table className="input-table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input
+                  type="email"
+                  placeholder="Enter Email"
+                  className="input-field"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  className="input-field"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </td>
+              <td>
+                <button
+                  type="button"
+                  className="action-button"
+                  onClick={handleAdd}
+                >
+                  Add
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>List of Instructors</h2>
+        <table className="instructors-table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {instructors.map((instructor, index) => (
+              <tr key={instructor.id || index}>
+                <td>{instructor.email}</td>
+                <td>{instructor.type}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };

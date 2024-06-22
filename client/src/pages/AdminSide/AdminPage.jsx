@@ -53,40 +53,41 @@ const AdminPage = () => {
         Logout
       </button>
       <div className="header">AdminPage</div>
+      <div className="container">
+        <div className="pages">
+          <Link to="/admin/instructor">
+            <button>Instructors Page</button>
+          </Link>
+          <Link to="/admin/course">
+            <button>Courses Page</button>
+          </Link>
+          <Link to="/admin/lecture">
+            <button>Lectures Page</button>
+          </Link>
+        </div>
 
-      <div className="pages">
-        <Link to="/admin/instructor">
-          <button>Instructors Page</button>
-        </Link>
-        <Link to="/admin/course">
-          <button>Courses Page</button>
-        </Link>
-        <Link to="/admin/lecture">
-          <button>Lectures Page</button>
-        </Link>
-      </div>
-
-      <div className="table-container">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
-              <th>Column 4</th>
-              <th>Column 5</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((row, index) => (
-              <tr key={index}>
-                {row.map((cell, cellIndex) => (
-                  <td key={cellIndex}>{cell}</td>
-                ))}
+        <div className="table-container">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {tableData.map((row, index) => (
+                <tr key={index}>
+                  {row.map((cell, cellIndex) => (
+                    <td key={cellIndex}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );
