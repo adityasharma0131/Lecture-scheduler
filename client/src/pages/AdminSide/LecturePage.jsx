@@ -94,7 +94,7 @@ const InstructorPage = () => {
       <button type="button" className="back-button" onClick={handleGoBack}>
         Back
       </button>
-      <div className="header">Course Management</div>
+      <div className="header">Lecture Page</div>
       <div className="container">
         <table className="input-table">
           <thead>
