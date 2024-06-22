@@ -13,7 +13,7 @@ const InstructorPage = () => {
 
   const fetchLectures = async () => {
     try {
-      const response = await axios.get("lecture-scheduler-seven.vercel.app/lectures");
+      const response = await axios.get("https://lecture-scheduler-seven.vercel.app/lectures");
       setLectures(response.data);
     } catch (error) {
       console.error("Error fetching lectures:", error);
