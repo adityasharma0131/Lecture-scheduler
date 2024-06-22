@@ -84,10 +84,10 @@ The Online Lecture Scheduler is a web application designed to manage courses, in
 
     ```bash
     # Install backend dependencies
-    
+
     cd backend
     npm install
-    
+
     # Install frontend dependencies
 
     cd ..
@@ -96,3 +96,31 @@ The Online Lecture Scheduler is a web application designed to manage courses, in
 
 
     ```
+
+3.  **Set Up MongoDB Atlas**
+
+- Create a MongoDB Atlas cluster and obtain the connection string.
+
+4.  **Configure Backend**
+
+- Create a .env file in the backend directory.
+
+- Add the MongoDB connection string and other configurations (if any).
+
+5.  **Run Backend**
+
+```bash
+
+# Inside the backend directory
+
+nodemon
+```
+
+6.  **Run Frontend**
+
+```bash
+
+# Inside the backend directory
+
+npm run dev
+```
