@@ -7,7 +7,7 @@ const Lecture = require("./Lecture"); // Ensure this path is correct and points 
 
 // Register admin
 router.post("/register-admin", async (req, res) => {
-  const { email, password } = req.body;
+  const {name, email, password } = req.body;
 
   try {
     // Check if user already exists
@@ -21,6 +21,7 @@ router.post("/register-admin", async (req, res) => {
 
     // Create a new user with type "admin"
     const newUser = new User({
+      name,
       email,
       password: hashedPassword,
       type: "admin",
