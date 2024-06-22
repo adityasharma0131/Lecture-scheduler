@@ -15,6 +15,7 @@ The Online Lecture Scheduler is a web application designed to manage courses, in
 ## Project Structure
 
 1. **Frontend**
+
    - **Components**:
      - **Login**: Handles user login with authentication for admins and instructors.
      - **Register**: Allows registration of new admin users.
@@ -23,6 +24,7 @@ The Online Lecture Scheduler is a web application designed to manage courses, in
      - **Error Page**: Simple 404 error page.
 
 2. **Backend**
+
    - **Express Server**: Handles API requests and serves static files.
    - **Routes**:
      - `/login`: Authenticates users (admins and instructors).
@@ -41,17 +43,21 @@ The Online Lecture Scheduler is a web application designed to manage courses, in
 ## Functionalities
 
 1. **User Authentication**
+
    - Admin and instructor login with authentication.
    - Registration for new admin and instructor accounts.
 
 2. **Admin Dashboard**
+
    - Manage courses: Add new courses, view existing courses.
    - Manage instructors: Add new instructors, view existing instructors.
 
 3. **Instructor Dashboard**
+
    - View scheduled lectures.
 
 4. **Course Registration**
+
    - Admins can register new courses with details such as name, level, description, and image.
 
 5. **Lecture Scheduling**
@@ -66,8 +72,27 @@ The Online Lecture Scheduler is a web application designed to manage courses, in
 
 ### Steps
 
-1. **Clone the Repository**
+1.  **Clone the Repository**
 
-   ```bash
-   git clone <repository-url>
-   cd <project-directory>
+    ```bash
+    git clone <repository-url>
+    cd <project-directory>
+
+    ```
+
+2.  **Install Dependencies**
+
+            ```bash
+            # Install backend dependencies
+
+        cd backend
+        npm install
+
+    Install frontend dependencies
+    cd ..
+    cd frontend
+    npm install
+
+    ```
+
+    ```
