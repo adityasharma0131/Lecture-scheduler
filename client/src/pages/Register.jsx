@@ -5,6 +5,7 @@ import { toast, Toaster } from "react-hot-toast";
 
 const Register = () => {
   const [values, setValues] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -23,6 +24,7 @@ const Register = () => {
       }
 
       const response = await axios.post("http://localhost:3000/register-admin", {
+        name: values.email,
         email: values.email,
         password: values.password,
       });
@@ -31,7 +33,7 @@ const Register = () => {
       toast.success(response.data.message);
 
       // Clear the form inputs after successful registration
-      setValues({ email: "", password: "" });
+      setValues({ name: "",  email: "", password: "" });
     } catch (error) {
       // Display error message from backend (if available) or generic error
       const errorMessage =
@@ -45,6 +47,15 @@ const Register = () => {
       <h2>Register Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="name"
+            value={values.name}
+            onChange={handleInputChange}
+            required
+          />
           <label htmlFor="email">Email</label>
           <input
             type="email"

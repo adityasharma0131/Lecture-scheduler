@@ -1,54 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const AdminPage = () => {
   const navigate = useNavigate();
+  const [lectures, setLectures] = useState([]);
+
+  useEffect(() => {
+    fetchLectures();
+  }, []);
+
+  const fetchLectures = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/lectures");
+      setLectures(response.data);
+    } catch (error) {
+      toast.error("Failed to fetch lectures");
+    }
+  };
 
   const handleLogout = () => {
     navigate("/");
   };
 
-  // Dummy data for the table
-  const tableData = [
-    [
-      "Row 1, Col 1",
-      "Row 1, Col 2",
-      "Row 1, Col 3",
-      "Row 1, Col 4",
-      "Row 1, Col 5",
-    ],
-    [
-      "Row 2, Col 1",
-      "Row 2, Col 2",
-      "Row 2, Col 3",
-      "Row 2, Col 4",
-      "Row 2, Col 5",
-    ],
-    [
-      "Row 3, Col 1",
-      "Row 3, Col 2",
-      "Row 3, Col 3",
-      "Row 3, Col 4",
-      "Row 3, Col 5",
-    ],
-    [
-      "Row 4, Col 1",
-      "Row 4, Col 2",
-      "Row 4, Col 3",
-      "Row 4, Col 4",
-      "Row 4, Col 5",
-    ],
-    [
-      "Row 5, Col 1",
-      "Row 5, Col 2",
-      "Row 5, Col 3",
-      "Row 5, Col 4",
-      "Row 5, Col 5",
-    ],
-  ];
-
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <button type="button" onClick={handleLogout}>
         Logout
       </button>
@@ -70,19 +48,17 @@ const AdminPage = () => {
           <table className="table">
             <thead>
               <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 4</th>
-                <th>Column 5</th>
+                <th>Date</th>
+                <th>Course</th>
+                <th>Instructor</th>
               </tr>
             </thead>
             <tbody>
-              {tableData.map((row, index) => (
-                <tr key={index}>
-                  {row.map((cell, cellIndex) => (
-                    <td key={cellIndex}>{cell}</td>
-                  ))}
+              {lectures.map((lecture) => (
+                <tr key={lecture._id}>
+                  <td>{new Date(lecture.date).toLocaleDateString()}</td>
+                  <td>{lecture.course}</td>
+                  <td>{lecture.instructor}</td>
                 </tr>
               ))}
             </tbody>

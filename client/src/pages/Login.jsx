@@ -34,7 +34,10 @@ const Login = () => {
       if (response.data.user) {
         if (userType === "admin" && response.data.user.type === "admin") {
           navigate("/admin");
-        } else if (userType === "instructor" && response.data.user.type === "instructor") {
+        } else if (
+          userType === "instructor" &&
+          response.data.user.type === "instructor"
+        ) {
           navigate("/instructor");
         } else {
           toast.error("Unauthorized access");
@@ -80,9 +83,6 @@ const Login = () => {
             Instructor Login
           </button>
         </div>
-        <span>
-          Don't have an account? <Link to="/register">Register</Link>
-        </span>
       </form>
       <Toaster />
     </div>
