@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 
 const Login = () => {
@@ -18,20 +19,33 @@ const Login = () => {
     return true;
   };
 
-  const handleAdminLogin = (e) => {
+  const handleLogin = async (e, userType) => {
     e.preventDefault();
     if (!validateForm()) return;
-    console.log("Admin Login Attempt:", values);
-    toast.success("Admin login successful");
-    navigate("/admin");
-  };
 
-  const handleInstructorLogin = (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-    console.log("Instructor Login Attempt:", values);
-    toast.success("Instructor login successful");
-    navigate("/instructor");
+    try {
+      const response = await axios.post(`http://localhost:3000/login`, {
+        email: values.email,
+        password: values.password,
+      });
+
+      toast.success(response.data.message);
+
+      if (response.data.user) {
+        if (userType === "admin" && response.data.user.type === "admin") {
+          navigate("/admin");
+        } else if (userType === "instructor" && response.data.user.type === "instructor") {
+          navigate("/instructor");
+        } else {
+          toast.error("Unauthorized access");
+        }
+      } else {
+        toast.error("User not found or invalid credentials");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      toast.error("Login failed. Please try again.");
+    }
   };
 
   return (
@@ -59,8 +73,12 @@ const Login = () => {
           />
         </div>
         <div>
-          <button type="submit" onClick={handleAdminLogin}>Admin Login</button>
-          <button type="submit" onClick={handleInstructorLogin}>Instructor Login</button>
+          <button type="submit" onClick={(e) => handleLogin(e, "admin")}>
+            Admin Login
+          </button>
+          <button type="submit" onClick={(e) => handleLogin(e, "instructor")}>
+            Instructor Login
+          </button>
         </div>
         <span>
           Don't have an account? <Link to="/register">Register</Link>
