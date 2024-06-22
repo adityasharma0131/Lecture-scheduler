@@ -4,20 +4,17 @@
 
 The Online Lecture Scheduler is a web application designed to manage courses, instructors, lectures, and user authentication. It allows administrators to register courses, manage instructors, schedule lectures, and handle user registrations and logins.
 
-
 ## Images
 
-![image1](/client/public/images/1.png)
-![image2](/client/public/images/2.png)
-![image3](/client/public/images/3.png)
-![image4](/client/public/images/4.png)
-![image5](/client/public/images/5.png)
-![image6](/client/public/images/6.png)
-![image7](/client/public/images/7.png)
-![image8](/client/public/images/8.png)
-![image9](/client/public/images/9.png)
-
-
+![image1](./client/public/1.png)
+![image2](/client/public/2.png)
+![image3](/client/public/3.png)
+![image4](/client/public/4.png)
+![image5](/client/public/5.png)
+![image6](/client/public/6.png)
+![image7](/client/public/7.png)
+![image8](/client/public/8.png)
+![image9](/client/public/9.png)
 
 ## Technologies Used
 
@@ -140,13 +137,12 @@ nodemon
 npm run dev
 ```
 
-
-
-
 6.  **Access the Application**
+
 - Open a browser and go to http://localhost:3000 to view the application.
 
 ## Notes
+
 - Make sure MongoDB Atlas connection details are correctly set up in the backend.
 - Adjust CORS settings (cors() middleware) in the backend to match your frontend URL if deploying to production.
 - This documentation provides an overview of the Online Lecture Scheduler, its functionalities, and instructions on how to set up and run the project locally.
