@@ -1,0 +1,15 @@
+users: 
+{"_id":{"$oid":"6676d98ed2ef42a3c99114f0"},"name":"Aditya","email":"123@gmail.com","password":"$2b$10$bn4JLSLkFah5DZ1rA8REW.GdyO7HHqqAqd7rqPVJyp.1zfLHUncDO","type":"instructor","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"6676e31177954547d5d0f249"},"name":"Suresh","email":"suresh@gmail.com","password":"$2b$10$Bqo.LmjZYY7V1gVr3s4z7ewu2RVOgnLFHg7CjasSQEOihgzT56r4C","type":"instructor","__v":{"$numberInt":"0"}}
+
+lectures:
+{"_id":{"$oid":"6676e20a713d3918462b3aaf"},"course":"PYTHON","instructor":"Aditya","date":{"$date":{"$numberLong":"1719100800000"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"6676e06cb428274d7864779b"},"course":"PYTHON","instructor":"Aditya","date":{"$date":{"$numberLong":"1718928000000"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"6676e32777954547d5d0f253"},"course":"NEXT JS","instructor":"Suresh","date":{"$date":{"$numberLong":"1718928000000"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"6676e33c77954547d5d0f257"},"course":"PYTHON","instructor":"Suresh","date":{"$date":{"$numberLong":"1719100800000"}},"__v":{"$numberInt":"0"}}
+
+courses:
+{"_id":{"$oid":"6676cd87fd6c818bdfa9a381"},"name":"PYTHON","level":"FYIT","description":"This is python language","image":"https://imghost.net/ib/ByhL6ic5TLSzAwm_1719060986.png","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"6676cdf7fd6c818bdfa9a387"},"name":"NEXT JS","level":"TYIT","description":"This is Next.Js","image":"https://www.imghost.net/ib/GdBLdrljEWQ486k_1719061962.png","__v":{"$numberInt":"0"}}
+
+
