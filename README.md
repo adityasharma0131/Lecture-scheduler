@@ -124,3 +124,15 @@ nodemon
 
 npm run dev
 ```
+
+
+
+
+6.  **Access the Application**
+- Open a browser and go to http://localhost:3000 to view the application.
+
+## Notes
+- Make sure MongoDB Atlas connection details are correctly set up in the backend.
+- Adjust CORS settings (cors() middleware) in the backend to match your frontend URL if deploying to production.
+- This documentation provides an overview of the Online Lecture Scheduler, its functionalities, and instructions on how to set up and run the project locally.
+- For further customization or deployment, refer to the specific components and configurations mentioned above.
